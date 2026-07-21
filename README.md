@@ -1,85 +1,113 @@
-# 📊 Customer Retention Intelligence Platform
+# 🚀 Intelligent Customer Churn Prediction
 
-> An end-to-end Machine Learning powered Customer Churn Prediction and Business Intelligence Platform built using **Python, Scikit-learn, Streamlit, and Plotly**.
+<div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
-![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red?logo=streamlit)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange?logo=scikitlearn)
-![License](https://img.shields.io/badge/License-MIT-green)
+### 🤖 AI-Powered Customer Retention Intelligence Platform
 
----
+Predict customer churn using Machine Learning and gain actionable business insights through an interactive analytics dashboard.
 
-## 📌 Overview
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Streamlit-red?style=for-the-badge)](https://intelligent-customer-churn-prediction-nshbyqpwm54dtq5w7miwsk.streamlit.app/)
+[![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit)](https://streamlit.io/)
+[![Scikit Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikitlearn)](https://scikit-learn.org/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-Customer churn is one of the biggest challenges faced by subscription-based businesses. This project predicts whether a customer is likely to leave the service using Machine Learning and provides actionable business recommendations through an interactive analytics dashboard.
+### 🌐 **Live Application**
 
-The application combines predictive analytics, business intelligence, and an intuitive user interface to help organizations identify high-risk customers and improve retention strategies.
+## **https://intelligent-customer-churn-prediction-nshbyqpwm54dtq5w7miwsk.streamlit.app/**
 
----
-
-## ✨ Features
-
-- 🔮 Customer Churn Prediction using Machine Learning
-- 📊 Interactive Analytics Dashboard
-- 📈 KPI Cards & Business Metrics
-- 🍩 Risk Distribution & Probability Charts
-- 📋 Prediction History Tracking
-- 🔍 Customer Search & Filtering
-- 💡 AI-inspired Business Recommendations
-- 📥 Export Prediction Reports
-- 🎨 Modern Streamlit Dashboard UI
-- 📱 Multi-Page Application
+</div>
 
 ---
 
-## 🏗️ System Architecture
+# 📌 Overview
+
+Customer churn is a major challenge for subscription-based businesses. Retaining existing customers is often more cost-effective than acquiring new ones.
+
+This project leverages **Machine Learning** to predict whether a customer is likely to churn based on demographic information, subscription details, and service usage patterns. Along with accurate predictions, the platform provides **business recommendations**, **risk analysis**, and **interactive dashboards** to support data-driven decision-making.
+
+---
+
+# ✨ Features
+
+✅ Machine Learning Based Customer Churn Prediction
+
+✅ Interactive Streamlit Dashboard
+
+✅ Customer Risk Classification
+
+✅ Churn Probability Analysis
+
+✅ Business Recommendation Engine
+
+✅ Prediction History Tracking
+
+✅ Customer Search & Filtering
+
+✅ Interactive Charts using Plotly
+
+✅ Export Prediction Reports
+
+✅ Professional Multi-page Dashboard
+
+---
+
+# 🎯 Live Demo
+
+### 🚀 Try the application here
+
+### 👉 https://intelligent-customer-churn-prediction-nshbyqpwm54dtq5w7miwsk.streamlit.app/
+
+
+# 🏗️ Project Architecture
 
 ```text
-Customer Details
-        │
-        ▼
-Feature Processing
-        │
-        ▼
+Customer Data
+      │
+      ▼
+Data Preprocessing
+      │
+      ▼
+Feature Engineering
+      │
+      ▼
 Machine Learning Model
 (Logistic Regression)
-        │
-        ▼
-Risk Prediction
-        │
-        ▼
-Business Recommendations
-        │
-        ▼
-Analytics Dashboard
+      │
+      ▼
+Prediction Probability
+      │
+      ▼
+Risk Classification
+      │
+      ▼
+Business Recommendation Engine
+      │
+      ▼
+Interactive Streamlit Dashboard
 ```
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
-### Programming
+## Programming Language
 
 - Python
 
-### Machine Learning
+## Machine Learning
 
 - Scikit-learn
 - Logistic Regression
 - Pandas
 - NumPy
 
-### Data Visualization
+## Data Visualization
 
 - Plotly
 - Streamlit
 
-### Data Processing
-
-- Pandas
-- NumPy
-
-### Development Tools
+## Development Tools
 
 - Git
 - GitHub
@@ -87,10 +115,10 @@ Analytics Dashboard
 
 ---
 
-## 📂 Project Structure
+# 📁 Project Structure
 
 ```text
-Customer-Retention-Intelligence/
+Intelligent-Customer-Churn-Prediction/
 │
 ├── app/
 │   ├── app.py
@@ -98,31 +126,36 @@ Customer-Retention-Intelligence/
 │   └── pages/
 │
 ├── dashboard/
+│
 ├── data/
+│
 ├── models/
+│
 ├── notebooks/
+│
 ├── reports/
+│
 ├── src/
 │
-├── README.md
 ├── requirements.txt
+├── README.md
 └── LICENSE
 ```
 
 ---
 
-## 🚀 Installation
+# ⚙️ Installation
 
 Clone the repository
 
 ```bash
-git clone https://github.com/Ayush-learn/Customer-Retention-Intelligence.git
+git clone https://github.com/Ayush-learn/Intelligent-Customer-Churn-Prediction.git
 ```
 
-Move into the project directory
+Move into the project
 
 ```bash
-cd Customer-Retention-Intelligence
+cd Intelligent-Customer-Churn-Prediction
 ```
 
 Install dependencies
@@ -139,67 +172,83 @@ streamlit run app/app.py
 
 ---
 
-## 📊 Dashboard Features
+# 📊 Dashboard Modules
 
-- Customer Risk Prediction
-- Churn Probability Analysis
-- Customer Segmentation
-- Risk Distribution Visualization
+- Customer Churn Prediction
+- Analytics Dashboard
+- Customer Risk Analysis
 - Prediction History
 - Business Insights
-- Recommendation Engine
-- Dashboard Filters
-- CSV Report Export
+- KPI Dashboard
+- Interactive Charts
+- Export Reports
 
 ---
 
-## 🤖 Machine Learning Pipeline
+# 🤖 Machine Learning Workflow
 
+- Data Collection
 - Data Cleaning
+- Exploratory Data Analysis
 - Feature Engineering
-- Data Preprocessing
 - Model Training
 - Model Evaluation
-- Churn Prediction
-- Recommendation Generation
-- Analytics Dashboard
+- Customer Churn Prediction
+- Business Recommendation Generation
 
 ---
 
-## 📈 Business Impact
+# 📈 Business Impact
 
-The platform enables organizations to:
+This application helps businesses to:
 
-- Identify customers likely to churn
+- Identify customers at high risk of churn
 - Improve customer retention strategies
 - Support data-driven business decisions
-- Monitor churn trends using interactive dashboards
-- Analyze customer behavior in real time
+- Monitor churn trends using dashboards
+- Reduce customer acquisition costs through proactive retention
 
 ---
 
-## 🔮 Future Enhancements
+# 🔮 Future Enhancements
 
-- SHAP-based Explainable AI
-- XGBoost & Random Forest Models
-- Real-Time Database Integration
+- Random Forest & XGBoost Models
+- Explainable AI using SHAP
 - Email Notification System
-- Cloud Deployment (AWS/Azure)
+- Cloud Database Integration
 - User Authentication
-- REST API Integration
+- REST API Support
+- Docker Deployment
+- AWS Cloud Deployment
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
-**Ayush Kumar**
+## Ayush Kumar
 
-Machine Learning | Data Science | AI Enthusiast
+**Machine Learning | Data Science | AI Enthusiast**
 
-GitHub: https://github.com/Ayush-learn
+GitHub
+
+https://github.com/Ayush-learn
+
+LinkedIn
+
+*(Add your LinkedIn profile here)*
 
 ---
 
-## ⭐ Support
+# ⭐ If you like this project
 
-If you found this project useful, consider giving it a ⭐ on GitHub.
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+It motivates me to build more open-source Machine Learning projects.
+
+---
+
+<div align="center">
+
+### 🚀 Built with ❤️ using Python, Streamlit & Scikit-Learn
+
+</div>
