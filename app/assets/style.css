@@ -1,0 +1,189 @@
+/* ===========================
+   CUSTOMER RETENTION DASHBOARD
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+*{
+    font-family:'Inter',sans-serif;
+}
+
+/* Main App */
+.stApp{
+    background:#070B17;
+    color:#F8FAFC;
+}
+
+/* Hide Streamlit Branding */
+#MainMenu,
+footer,
+header{
+    visibility:hidden;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"]{
+    background:#0B1120;
+    border-right:1px solid rgba(255,255,255,.08);
+}
+
+/* Sidebar Text */
+section[data-testid="stSidebar"] *{
+    color:white;
+}
+
+/* Containers */
+
+div[data-testid="stVerticalBlock"]>div{
+    border-radius:18px;
+}
+
+/* Buttons */
+
+.stButton>button{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#2563EB,#1D4ED8);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.stButton>button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.4);
+
+}
+
+/* Inputs */
+
+.stTextInput input,
+.stNumberInput input{
+
+    background:#111827;
+
+    border-radius:12px;
+
+    border:1px solid #1E293B;
+
+    color:white;
+
+}
+
+/* Select Box */
+
+.stSelectbox div[data-baseweb="select"]>div{
+
+    background:#111827;
+
+    border-radius:12px;
+
+    border:1px solid #1E293B;
+
+}
+
+/* Slider */
+
+.stSlider{
+
+    padding-top:10px;
+
+}
+
+/* Metrics */
+
+div[data-testid="metric-container"]{
+
+    background:#111827;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+/* Tables */
+
+div[data-testid="stDataFrame"]{
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+/* Progress */
+
+.stProgress>div>div{
+
+    background:#2563EB;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:50px;
+
+}
+
+/* Cards */
+
+.section-card{
+    background:#111827;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:25px;
+    border:1px solid rgba(255,255,255,.06);
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+/* Titles */
+
+h1{
+
+    font-size:40px;
+
+    font-weight:700;
+
+}
+
+h2{
+
+    font-weight:600;
+
+}
+
+h3{
+
+    font-weight:600;
+
+}
