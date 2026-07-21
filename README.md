@@ -178,22 +178,6 @@ The platform enables organizations to:
 
 ---
 
-## 📸 Application Preview
-
-### Prediction Dashboard
-
-> *(Add a screenshot here)*
-
-### Analytics Dashboard
-
-> *(Add a screenshot here)*
-
-### Prediction History
-
-> *(Add a screenshot here)*
-
----
-
 ## 🔮 Future Enhancements
 
 - SHAP-based Explainable AI
