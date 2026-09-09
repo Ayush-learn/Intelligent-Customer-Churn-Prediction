@@ -1,5 +1,7 @@
 import streamlit as st
+import requests
 import sys
+import os
 from pathlib import Path
 
 # ==========================================================
@@ -461,14 +463,40 @@ if predict:
 
     }
 
-    prediction, probability = predict_customer(customer)
+# ==========================================================
+# Call FastAPI Backend
+# ==========================================================
 
-    risk = get_risk_level(probability)
-
-    recommendations = get_recommendations(
-        probability,
-        customer
+    API_URL = os.getenv(
+        "API_BASE_URL",
+        "http://churn-api-alb-827535760.ap-south-1.elb.amazonaws.com"
     )
+
+    try:
+
+        response = requests.post(
+            f"{API_URL}/predict",
+            json=customer,
+            timeout=10
+        )
+
+        response.raise_for_status()
+
+        result = response.json()
+
+        prediction = result["prediction"]
+        probability = result["churn_probability"] * 100
+        risk = result["risk"]
+        recommendations = result["recommendations"]
+
+    except requests.exceptions.RequestException as e:
+
+        st.error(
+            "❌ Could not connect to the FastAPI backend. "
+            "Make sure Uvicorn is running on port 8000."
+        )
+
+        st.stop()
 
     save_prediction(
         customer,

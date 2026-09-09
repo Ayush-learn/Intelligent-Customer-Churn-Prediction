@@ -4,3 +4,8 @@ numpy
 scikit-learn
 plotly
 joblib
+
+fastapi
+uvicorn
+pydantic
+requests
