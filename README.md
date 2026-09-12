@@ -1,123 +1,177 @@
 # 🚀 Intelligent Customer Churn Prediction
 
-<div align="center">
+### AI-Powered Customer Retention Intelligence Platform
 
-### 🤖 AI-Powered Customer Retention Intelligence Platform
+An end-to-end machine learning platform that predicts customer churn, classifies customer risk, and generates actionable retention recommendations.
 
-Predict customer churn using Machine Learning and gain actionable business insights through an interactive analytics dashboard.
+The project is deployed using **AWS ECS Fargate**, exposed through an **Application Load Balancer**, and connected to a **Streamlit frontend** with automated CI/CD through **GitHub Actions**.
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Streamlit-red?style=for-the-badge)](https://intelligent-customer-churn-prediction-nshbyqpwm54dtq5w7miwsk.streamlit.app/)
-[![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit)](https://streamlit.io/)
-[![Scikit Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikitlearn)](https://scikit-learn.org/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-
-### 🌐 **Live Application**
-
-## **https://intelligent-customer-churn-prediction-nshbyqpwm54dtq5w7miwsk.streamlit.app/**
-
-</div>
+🔗 **Live Demo:** https://intelligent-customer-churn-prediction-nshbyqpwm54dtq5w7miwsk.streamlit.app/
 
 ---
 
-# 📌 Overview
+# 📌 Project Overview
 
-Customer churn is a major challenge for subscription-based businesses. Retaining existing customers is often more cost-effective than acquiring new ones.
+Customer churn is a major challenge for subscription-based businesses.
 
-This project leverages **Machine Learning** to predict whether a customer is likely to churn based on demographic information, subscription details, and service usage patterns. Along with accurate predictions, the platform provides **business recommendations**, **risk analysis**, and **interactive dashboards** to support data-driven decision-making.
+This project uses machine learning to:
 
----
+- Predict whether a customer is likely to churn
+- Calculate churn probability
+- Classify customers into risk levels
+- Generate personalized retention recommendations
+- Provide an interactive dashboard for predictions and analytics
+- Expose predictions through a production REST API
+- Deploy the ML backend on AWS
+- Monitor the backend using CloudWatch
+- Automatically scale the API based on CPU utilization
+- Automatically deploy new versions through GitHub Actions
 
-# ✨ Features
-
-✅ Machine Learning Based Customer Churn Prediction
-
-✅ Interactive Streamlit Dashboard
-
-✅ Customer Risk Classification
-
-✅ Churn Probability Analysis
-
-✅ Business Recommendation Engine
-
-✅ Prediction History Tracking
-
-✅ Customer Search & Filtering
-
-✅ Interactive Charts using Plotly
-
-✅ Export Prediction Reports
-
-✅ Professional Multi-page Dashboard
+The goal is to move beyond simply predicting churn and provide **business-oriented actions that can help retain high-risk customers.**
 
 ---
 
-# 🎯 Live Demo
+# ✨ Key Features
 
-### 🚀 Try the application here
+### 🤖 Machine Learning
 
-### 👉 https://intelligent-customer-churn-prediction-nshbyqpwm54dtq5w7miwsk.streamlit.app/
+- Customer churn prediction
+- Churn probability estimation
+- Risk classification
+- Logistic Regression model
+- Data preprocessing and feature engineering
+- Model evaluation and performance metrics
+
+### 📊 Analytics Dashboard
+
+- Interactive Streamlit dashboard
+- Customer-level predictions
+- Prediction history
+- Risk analysis
+- Project information
+- Business-oriented insights
+
+### 💡 Retention Intelligence
+
+The recommendation engine generates actions based on customer risk and service characteristics.
+
+Examples include:
+
+- Contact high-risk customers
+- Offer loyalty discounts
+- Assign retention executives
+- Recommend longer-term contracts
+- Promote technical support
+- Promote online security services
+
+### ☁️ Production Deployment
+
+- FastAPI REST API
+- Dockerized ML backend
+- AWS ECS Fargate
+- Amazon ECR
+- Application Load Balancer
+- ECS health checks
+- CloudWatch logging
+- CloudWatch CPU monitoring
+- SNS email alerts
+- ECS target-tracking auto scaling
+- GitHub Actions CI/CD
+
+---
+
+# 🏗️ System Architecture
+
+text
+                         ┌─────────────────────┐
+                         │   GitHub Repository  │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │   GitHub Actions     │
+                         │       CI/CD          │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │     Amazon ECR       │
+                         │    Docker Image      │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+
+┌──────────────┐          ┌─────────────────────┐
+│     User     │ ───────► │  Streamlit Cloud    │
+└──────────────┘          │    Frontend         │
+                          └──────────┬──────────┘
+                                     │
+                                     │ HTTP
+                                     ▼
+                          ┌─────────────────────┐
+                          │ Application Load    │
+                          │ Balancer (ALB)      │
+                          └──────────┬──────────┘
+                                     │
+                                     ▼
+                          ┌─────────────────────┐
+                          │    AWS ECS Fargate  │
+                          │    FastAPI Backend  │
+                          └──────────┬──────────┘
+                                     │
+                                     ▼
+                          ┌─────────────────────┐
+                          │    ML Churn Model   │
+                          └──────────┬──────────┘
+                                     │
+                         ┌───────────┴───────────┐
+                         ▼                       ▼
+                  ┌──────────────┐       ┌────────────────┐
+                  │ Risk Level   │       │ Recommendation │
+                  │ Classification│       │    Engine      │
+                  └──────────────┘       └────────────────┘
 
 
-# 🏗️ Project Architecture
+             ┌─────────────────────────────────────┐
+             │          AWS Monitoring             │
+             │                                     │
+             │ ECS → CloudWatch → SNS → Email     │
+             └─────────────────────────────────────┘
 
-```text
-Customer Data
-      │
-      ▼
-Data Preprocessing
-      │
-      ▼
+                    ECS Auto Scaling
+                         │
+                    1 ───► 2 Tasks
+🛠️ Technology Stack
+Programming & Data
+Python
+Pandas
+NumPy
+Scikit-learn
+Machine Learning
+Logistic Regression
 Feature Engineering
-      │
-      ▼
-Machine Learning Model
-(Logistic Regression)
-      │
-      ▼
-Prediction Probability
-      │
-      ▼
-Risk Classification
-      │
-      ▼
-Business Recommendation Engine
-      │
-      ▼
-Interactive Streamlit Dashboard
-```
-
----
-
-# 🛠️ Tech Stack
-
-## Programming Language
-
-- Python
-
-## Machine Learning
-
-- Scikit-learn
-- Logistic Regression
-- Pandas
-- NumPy
-
-## Data Visualization
-
-- Plotly
-- Streamlit
-
-## Development Tools
-
-- Git
-- GitHub
-- VS Code
-
----
-
-# 📁 Project Structure
-
-```text
+Model Evaluation
+Probability-based Risk Classification
+Backend & API
+FastAPI
+Pydantic
+Uvicorn
+Frontend & Visualization
+Streamlit
+Plotly
+Cloud & Deployment
+AWS ECS Fargate
+Amazon ECR
+Application Load Balancer
+Amazon CloudWatch
+Amazon SNS
+Docker
+DevOps
+Git
+GitHub
+GitHub Actions
+CI/CD
+📂 Project Structure
 Intelligent-Customer-Churn-Prediction/
 │
 ├── app/
@@ -125,130 +179,295 @@ Intelligent-Customer-Churn-Prediction/
 │   ├── assets/
 │   └── pages/
 │
+├── api/
+│   ├── main.py
+│   └── schemas.py
+│
+├── assets/
+│
 ├── dashboard/
 │
 ├── data/
 │
 ├── models/
+│   └── churn_model.pkl
 │
 ├── notebooks/
 │
+├── pages/
+│   ├── Dashboard.py
+│   ├── Prediction_History.py
+│   └── Project_Info.py
+│
 ├── reports/
+│   └── metrics/
 │
 ├── src/
+│   ├── models/
+│   │   ├── config.py
+│   │   ├── evaluate.py
+│   │   ├── metrics.py
+│   │   ├── pipeline.py
+│   │   ├── predict.py
+│   │   ├── risk.py
+│   │   └── train.py
+│   │
+│   └── services/
+│       ├── logging_service.py
+│       ├── recommendation_service.py
+│       └── utils/
 │
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
+│
+├── Dockerfile
 ├── requirements.txt
 ├── README.md
 └── LICENSE
-```
+🔄 Machine Learning Workflow
+Raw Customer Data
+        │
+        ▼
+Data Cleaning
+        │
+        ▼
+Data Preprocessing
+        │
+        ▼
+Feature Engineering
+        │
+        ▼
+Model Training
+        │
+        ▼
+Logistic Regression
+        │
+        ▼
+Churn Probability
+        │
+        ▼
+Risk Classification
+        │
+        ▼
+Retention Recommendations
+🧠 Prediction Pipeline
 
----
+The FastAPI backend accepts customer information through a REST endpoint.
 
-# ⚙️ Installation
+Customer Data
+      │
+      ▼
+FastAPI Request
+      │
+      ▼
+Pydantic Validation
+      │
+      ▼
+ML Model
+      │
+      ▼
+Churn Prediction
+      │
+      ▼
+Churn Probability
+      │
+      ▼
+Risk Classification
+      │
+      ▼
+Retention Recommendations
+      │
+      ▼
+JSON Response
 
-Clone the repository
+Example response:
 
-```bash
+{
+  "prediction": 1,
+  "churn_probability": 0.81,
+  "risk": "HIGH RISK",
+  "recommendations": [
+    "Contact the customer within 48 hours.",
+    "Offer a loyalty discount.",
+    "Assign a retention executive."
+  ]
+}
+☁️ AWS Deployment
+
+The ML backend is containerized using Docker and deployed on AWS.
+
+Deployment Flow
+Developer
+    │
+    ▼
+Git Push
+    │
+    ▼
+GitHub Actions
+    │
+    ▼
+Docker Build
+    │
+    ▼
+Amazon ECR
+    │
+    ▼
+AWS ECS Fargate
+    │
+    ▼
+Application Load Balancer
+    │
+    ▼
+FastAPI API
+AWS Services Used
+Service	Purpose
+Amazon ECR	Stores Docker container images
+Amazon ECS Fargate	Runs the FastAPI backend
+Application Load Balancer	Exposes and routes API traffic
+CloudWatch	Logs and monitors the application
+SNS	Sends monitoring alerts
+ECS Auto Scaling	Scales tasks based on CPU utilization
+🔁 CI/CD Pipeline
+
+GitHub Actions automatically deploys the backend whenever changes are pushed to the main branch.
+
+Git Push
+   │
+   ▼
+GitHub Actions
+   │
+   ├── Checkout Repository
+   │
+   ├── Configure AWS Credentials
+   │
+   ├── Login to Amazon ECR
+   │
+   ├── Build Docker Image
+   │
+   ├── Push Image to ECR
+   │
+   └── Deploy to ECS
+
+This removes the need to manually build and deploy the backend after every code update.
+
+📈 Monitoring & Auto Scaling
+
+The deployed API is monitored using Amazon CloudWatch.
+
+Current monitoring includes:
+
+ECS application logs
+API request logs
+ECS CPU utilization monitoring
+CloudWatch CPU alarm
+SNS email notifications
+
+The ECS service also uses target-tracking auto scaling.
+
+Normal Load
+    │
+    ▼
+1 ECS Task
+
+High CPU Utilization
+    │
+    ▼
+Auto Scaling
+    │
+    ▼
+2 ECS Tasks
+📊 Dashboard Modules
+🏠 Main Dashboard
+
+Provides an overview of the churn prediction platform.
+
+🔮 Customer Prediction
+
+Allows users to enter customer information and receive:
+
+Churn prediction
+Churn probability
+Risk level
+Retention recommendations
+📜 Prediction History
+
+Stores and displays previous prediction results.
+
+ℹ️ Project Information
+
+Provides information about the project, methodology, and technology stack.
+
+💼 Business Impact
+
+The system can help businesses:
+
+Identify customers at high risk of churn
+Prioritize retention efforts
+Reduce unnecessary retention spending
+Personalize customer offers
+Improve customer engagement
+Support data-driven retention strategies
+
+Instead of treating every customer equally, businesses can focus their resources on customers who are most likely to leave.
+
+🚀 Running Locally
+1. Clone the repository
 git clone https://github.com/Ayush-learn/Intelligent-Customer-Churn-Prediction.git
-```
-
-Move into the project
-
-```bash
 cd Intelligent-Customer-Churn-Prediction
-```
-
-Install dependencies
-
-```bash
+2. Create a virtual environment
+python -m venv venv
+Windows
+venv\Scripts\activate
+Linux / macOS
+source venv/bin/activate
+3. Install dependencies
 pip install -r requirements.txt
-```
+4. Run the FastAPI backend
+uvicorn api.main:app --reload
 
-Run the application
+API documentation:
 
-```bash
+http://127.0.0.1:8000/docs
+5. Run the Streamlit application
 streamlit run app/app.py
-```
+🔮 Future Enhancements
+Random Forest & XGBoost model comparison
+Explainable AI using SHAP
+Cloud database integration
+User authentication and authorization
+Model drift monitoring
+Advanced application monitoring
+HTTPS with custom domain
+Automated model retraining pipeline
+👨‍💻 Author
+Ayush Kumar
 
----
+Machine Learning & Data Science Enthusiast
 
-# 📊 Dashboard Modules
+🔗 GitHub: https://github.com/Ayush-learn
 
-- Customer Churn Prediction
-- Analytics Dashboard
-- Customer Risk Analysis
-- Prediction History
-- Business Insights
-- KPI Dashboard
-- Interactive Charts
-- Export Reports
+🔗 LinkedIn: [Add your LinkedIn profile]
 
----
+⭐ Project Highlights
+Machine Learning
+       +
+FastAPI REST API
+       +
+Docker
+       +
+AWS ECS Fargate
+       +
+Amazon ECR
+       +
+Application Load Balancer
+       +
+CloudWatch Monitoring
+       +
+SNS Alerts
+       +
+Auto Scaling
+       +
+GitHub Actions CI/CD
 
-# 🤖 Machine Learning Workflow
-
-- Data Collection
-- Data Cleaning
-- Exploratory Data Analysis
-- Feature Engineering
-- Model Training
-- Model Evaluation
-- Customer Churn Prediction
-- Business Recommendation Generation
-
----
-
-# 📈 Business Impact
-
-This application helps businesses to:
-
-- Identify customers at high risk of churn
-- Improve customer retention strategies
-- Support data-driven business decisions
-- Monitor churn trends using dashboards
-- Reduce customer acquisition costs through proactive retention
-
----
-
-# 🔮 Future Enhancements
-
-- Random Forest & XGBoost Models
-- Explainable AI using SHAP
-- Email Notification System
-- Cloud Database Integration
-- User Authentication
-- REST API Support
-- Docker Deployment
-- AWS Cloud Deployment
-
----
-
-# 👨‍💻 Author
-
-## Ayush Kumar
-
-**Machine Learning | Data Science | AI Enthusiast**
-
-GitHub
-
-https://github.com/Ayush-learn
-
-LinkedIn
-
-*(Add your LinkedIn profile here)*
-
----
-
-# ⭐ If you like this project
-
-If you found this project useful, please consider giving it a ⭐ on GitHub.
-
-It motivates me to build more open-source Machine Learning projects.
-
----
-
-<div align="center">
-
-### 🚀 Built with ❤️ using Python, Streamlit & Scikit-Learn
-
-</div>
+An end-to-end ML system built from model development to production deployment.
